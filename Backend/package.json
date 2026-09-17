@@ -12,12 +12,16 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "@ai-sdk/google": "^4.0.74",
+    "@ai-sdk/google-vertex": "^5.0.86",
+    "@google/genai": "^2.23.0",
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
     "@types/bcrypt": "^6.0.0",
     "@types/cookie-parser": "^1.4.10",
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
+    "ai": "^7.0.105",
     "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
     "express": "^5.2.1",
@@ -26,8 +30,7 @@
     "pg": "^8.21.0",
     "zod": "^4.4.3"
   },
-"scripts": {
-  "dev": "bun --watch src/app.ts"
-}
-
+  "scripts": {
+    "dev": "bun --watch src/app.ts"
+  }
 }

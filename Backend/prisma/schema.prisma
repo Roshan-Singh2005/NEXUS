@@ -12,4 +12,13 @@ model User {
   name      String
   email     String   @unique
   password  String
+  messages  Message[]
+}
+
+model Message {
+  id        String   @id @default(uuid())
+  prompt    String
+  response  String
+  userId    String  
+  user      User     @relation(fields: [userId], references: [id])
 }
