@@ -1,6 +1,5 @@
 import {Router} from 'express';
 import {Request, Response} from 'express';
-import {prisma} from '../db/prisma';
 import {generateTextFromPrompt} from '../services/ai';
 
 export const chatRouter = Router();
