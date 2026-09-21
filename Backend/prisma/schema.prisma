@@ -9,16 +9,30 @@ datasource db {
 
 model User {
   id        String   @id @default(uuid())
-  name      String
-  email     String   @unique
-  password  String
-  messages  Message[]
+  email String @unique
+  name String
+  password String 
+  messages Message[]
+  pastConversations PastConversation[]
+
 }
+
+model PastConversation {
+  id        String   @id @default(uuid())
+  userId String  
+  prompt String
+  user User @relation(fields: [userId], references: [id])
+  messages Message[]
+
+}
+
 
 model Message {
   id        String   @id @default(uuid())
-  prompt    String
-  response  String
-  userId    String  
-  user      User     @relation(fields: [userId], references: [id])
+  prompt String
+  userId String  
+  response String
+  user User @relation(fields: [userId], references: [id])
+  pastConversationId String?
+  pastConversation PastConversation? @relation(fields: [pastConversationId], references: [id])
 }
